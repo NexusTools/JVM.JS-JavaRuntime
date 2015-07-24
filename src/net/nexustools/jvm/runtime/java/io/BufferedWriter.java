@@ -25,7 +25,7 @@
 
 package net.nexustools.jvm.runtime.java.io;
 
-import net.nexustools.jvm.console.SystemConstants;
+import net.nexustools.jvm.runtime.SystemConstants;
 
 
 /**
