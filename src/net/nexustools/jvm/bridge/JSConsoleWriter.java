@@ -17,9 +17,6 @@
  */
 package net.nexustools.jvm.bridge;
 
-import java.io.IOException;
-import java.io.OutputStream;
-
 /**
  *
  * @author kate
@@ -30,26 +27,5 @@ public class JSConsoleWriter {
     }
 
     private native void init(String type);
-    
     public native void append(String line);
-
-    public final class Stream extends OutputStream {
-        private String buffer = "";
-
-        @Override
-        public void write(byte[] b, int off, int len) throws IOException {
-            buffer += new String(b, off, len);
-
-            int pos;
-            while((pos = buffer.indexOf('\n')) != -1) {
-                append(buffer.substring(0, pos));
-                buffer = buffer.substring(pos+1);
-            }
-        }
-
-        @Override
-        public void write(int b) throws IOException {
-            write(new byte[]{(byte)b});
-        }
-    };
 }

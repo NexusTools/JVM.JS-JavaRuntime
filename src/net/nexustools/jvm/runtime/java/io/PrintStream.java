@@ -27,4 +27,17 @@ public class PrintStream extends FilterOutputStream {
         super(out);
     }
     
+    public void print(char c) throws IOException {
+        out.write(c);
+    }
+    
+    public void print(String string) throws IOException {
+        out.write(string.getBytes());
+    }
+    
+    public void println(String string) throws IOException {
+        print(string);
+        print('\n');
+    }
+    
 }
