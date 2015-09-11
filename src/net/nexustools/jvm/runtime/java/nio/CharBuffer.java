@@ -15,17 +15,12 @@
  * You should have received a copy of the GNU General Public License
  * along with JVM.JS-JavaRuntime.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.nexustools.jvm.runtime.java.io;
+package net.nexustools.jvm.runtime.java.nio;
 
 /**
  *
  * @author kate
  */
-public class FileOutputStream extends java.io.OutputStream {
-
-    @Override
-    public void write(int b) throws java.io.IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+public class CharBuffer {
     
 }

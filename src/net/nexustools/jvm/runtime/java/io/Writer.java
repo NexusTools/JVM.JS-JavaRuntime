@@ -47,7 +47,7 @@ package net.nexustools.jvm.runtime.java.io;
  * @since       JDK1.1
  */
 
-public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.Appendable, Closeable, Flushable {
+public abstract class Writer implements java.lang.Appendable, java.io.Closeable, java.io.Flushable {
 
     /**
      * Temporary buffer used to hold writes of strings and single characters
@@ -104,7 +104,7 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      * @throws  IOException
      *          If an I/O error occurs
      */
-    public void write(int c) throws IOException {
+    public void write(int c) throws java.io.IOException {
         synchronized (lock) {
             if (writeBuffer == null){
                 writeBuffer = new char[writeBufferSize];
@@ -123,7 +123,7 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      * @throws  IOException
      *          If an I/O error occurs
      */
-    public void write(char cbuf[]) throws IOException {
+    public void write(char cbuf[]) throws java.io.IOException {
         write(cbuf, 0, cbuf.length);
     }
 
@@ -142,7 +142,7 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      * @throws  IOException
      *          If an I/O error occurs
      */
-    abstract public void write(char cbuf[], int off, int len) throws IOException;
+    abstract public void write(char cbuf[], int off, int len) throws java.io.IOException;
 
     /**
      * Writes a string.
@@ -153,7 +153,7 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      * @throws  IOException
      *          If an I/O error occurs
      */
-    public void write(String str) throws IOException {
+    public void write(String str) throws java.io.IOException {
         write(str, 0, str.length());
     }
 
@@ -177,7 +177,7 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      * @throws  IOException
      *          If an I/O error occurs
      */
-    public void write(String str, int off, int len) throws IOException {
+    public void write(String str, int off, int len) throws java.io.IOException {
         synchronized (lock) {
             char cbuf[];
             if (len <= writeBufferSize) {
@@ -220,7 +220,7 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      *
      * @since  1.5
      */
-    public Writer append(CharSequence csq) throws IOException {
+    public Writer append(CharSequence csq) throws java.io.IOException {
         if (csq == null)
             write("null");
         else
@@ -264,7 +264,7 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      *
      * @since  1.5
      */
-    public Writer append(CharSequence csq, int start, int end) throws IOException {
+    public Writer append(CharSequence csq, int start, int end) throws java.io.IOException {
         CharSequence cs = (csq == null ? "null" : csq);
         write(cs.subSequence(start, end).toString());
         return this;
@@ -289,7 +289,7 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      *
      * @since 1.5
      */
-    public Writer append(char c) throws IOException {
+    public Writer append(char c) throws java.io.IOException {
         write(c);
         return this;
     }
@@ -310,7 +310,7 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      * @throws  IOException
      *          If an I/O error occurs
      */
-    abstract public void flush() throws IOException;
+    abstract public void flush() throws java.io.IOException;
 
     /**
      * Closes the stream, flushing it first. Once the stream has been closed,
@@ -320,6 +320,6 @@ public abstract class Writer implements net.nexustools.jvm.runtime.java.lang.App
      * @throws  IOException
      *          If an I/O error occurs
      */
-    abstract public void close() throws IOException;
+    abstract public void close() throws java.io.IOException;
 
 }

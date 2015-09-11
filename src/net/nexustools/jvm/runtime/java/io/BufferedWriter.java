@@ -64,7 +64,7 @@ import net.nexustools.jvm.runtime.SystemConstants;
  * @since       JDK1.1
  */
 
-public class BufferedWriter extends Writer {
+public class BufferedWriter extends java.io.Writer {
 
     private Writer out;
 
@@ -107,13 +107,13 @@ public class BufferedWriter extends Writer {
         nChars = sz;
         nextChar = 0;
 
-        lineSeparator = SystemConstants.line.separator;
+        lineSeparator = SystemConstants.LINE.SEPARATOR;
     }
 
     /** Checks to make sure that the stream has not been closed */
-    private void ensureOpen() throws IOException {
+    private void ensureOpen() throws java.io.IOException {
         if (out == null)
-            throw new IOException("Stream closed");
+            throw new java.io.IOException("Stream closed");
     }
 
     /**
@@ -121,7 +121,7 @@ public class BufferedWriter extends Writer {
      * flushing the stream itself.  This method is non-private only so that it
      * may be invoked by PrintStream.
      */
-    void flushBuffer() throws IOException {
+    void flushBuffer() throws java.io.IOException {
         synchronized (lock) {
             ensureOpen();
             if (nextChar == 0)
@@ -136,7 +136,7 @@ public class BufferedWriter extends Writer {
      *
      * @exception  IOException  If an I/O error occurs
      */
-    public void write(int c) throws IOException {
+    public void write(int c) throws java.io.IOException {
         synchronized (lock) {
             ensureOpen();
             if (nextChar >= nChars)
@@ -170,7 +170,7 @@ public class BufferedWriter extends Writer {
      *
      * @exception  IOException  If an I/O error occurs
      */
-    public void write(char cbuf[], int off, int len) throws IOException {
+    public void write(char cbuf[], int off, int len) throws java.io.IOException {
         synchronized (lock) {
             ensureOpen();
             if ((off < 0) || (off > cbuf.length) || (len < 0) ||
@@ -216,7 +216,7 @@ public class BufferedWriter extends Writer {
      *
      * @exception  IOException  If an I/O error occurs
      */
-    public void write(String s, int off, int len) throws IOException {
+    public void write(String s, int off, int len) throws java.io.IOException {
         synchronized (lock) {
             ensureOpen();
 
@@ -239,7 +239,7 @@ public class BufferedWriter extends Writer {
      *
      * @exception  IOException  If an I/O error occurs
      */
-    public void newLine() throws IOException {
+    public void newLine() throws java.io.IOException {
         write(lineSeparator);
     }
 
@@ -248,14 +248,14 @@ public class BufferedWriter extends Writer {
      *
      * @exception  IOException  If an I/O error occurs
      */
-    public void flush() throws IOException {
+    public void flush() throws java.io.IOException {
         synchronized (lock) {
             flushBuffer();
             out.flush();
         }
     }
 
-    public void close() throws IOException {
+    public void close() throws java.io.IOException {
         synchronized (lock) {
             if (out == null) {
                 return;

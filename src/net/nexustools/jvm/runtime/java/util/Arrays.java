@@ -24,5 +24,6 @@ package net.nexustools.jvm.runtime.java.util;
 public class Arrays {
 
     public static native char[] copyOf(char[] value, int count);
+    public static native void fill(char[] rcb, int i, int len, char c);
     
 }

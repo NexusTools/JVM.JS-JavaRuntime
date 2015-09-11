@@ -21,23 +21,31 @@ package net.nexustools.jvm.runtime.java.io;
  *
  * @author kate
  */
-public class PrintStream extends FilterOutputStream {
+public class PrintStream extends java.io.FilterOutputStream {
 
-    public PrintStream(OutputStream out) {
+    public PrintStream(java.io.OutputStream out) {
         super(out);
     }
     
-    public void print(char c) throws IOException {
+    public void print(char c) throws java.io.IOException {
         out.write(c);
     }
     
-    public void print(String string) throws IOException {
+    public void print(String string) throws java.io.IOException {
         out.write(string.getBytes());
     }
     
-    public void println(String string) throws IOException {
+    public void println(String string) throws java.io.IOException {
         print(string);
+        println();
+    }
+    
+    public void println() throws java.io.IOException {
         print('\n');
+    }
+    
+    public boolean checkError() {
+        return false;
     }
     
 }

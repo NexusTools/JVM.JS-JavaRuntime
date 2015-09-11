@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2003, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2005, 2006, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -25,25 +25,26 @@
 
 package net.nexustools.jvm.runtime.java.io;
 
-import net.nexustools.jvm.runtime.java.io.IOException;
-
 /**
- * A <tt>Closeable</tt> is a source or destination of data that can be closed.
- * The close method is invoked to release resources that the object is
- * holding (such as open files).
+ * Thrown when a serious I/O error has occurred.
  *
- * @since 1.5
+ * @author  Xueming Shen
+ * @since   1.6
  */
-
-public interface Closeable {
-
+public class IOError extends Error {
     /**
-     * Closes this stream and releases any system resources associated
-     * with it. If the stream is already closed then invoking this
-     * method has no effect.
+     * Constructs a new instance of IOError with the specified cause. The
+     * IOError is created with the detail message of
+     * <tt>(cause==null ? null : cause.toString())</tt> (which typically
+     * contains the class and detail message of cause).
      *
-     * @throws IOException if an I/O error occurs
+     * @param  cause
+     *         The cause of this error, or <tt>null</tt> if the cause
+     *         is not known
      */
-    public void close() throws java.io.IOException;
+    public IOError(Throwable cause) {
+        super(cause);
+    }
 
+    private static final long serialVersionUID = 67100927991680413L;
 }

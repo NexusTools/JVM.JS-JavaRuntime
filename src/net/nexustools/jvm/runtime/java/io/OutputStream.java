@@ -43,7 +43,7 @@ package net.nexustools.jvm.runtime.java.io;
  * @see     net.nexustools.jvm.runtime.java.io.OutputStream#write(int)
  * @since   JDK1.0
  */
-public abstract class OutputStream implements Closeable, Flushable {
+public abstract class OutputStream implements java.io.Closeable, java.io.Flushable {
     /**
      * Writes the specified byte to this output stream. The general
      * contract for <code>write</code> is that one byte is written
@@ -135,7 +135,7 @@ public abstract class OutputStream implements Closeable, Flushable {
      *
      * @exception  IOException  if an I/O error occurs.
      */
-    public void flush() throws IOException {
+    public void flush() throws java.io.IOException {
     }
 
     /**
@@ -148,7 +148,7 @@ public abstract class OutputStream implements Closeable, Flushable {
      *
      * @exception  IOException  if an I/O error occurs.
      */
-    public void close() throws IOException {
+    public void close() throws java.io.IOException {
     }
 
 }

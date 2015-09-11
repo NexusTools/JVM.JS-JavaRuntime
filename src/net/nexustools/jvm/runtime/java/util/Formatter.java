@@ -22,5 +22,13 @@ package net.nexustools.jvm.runtime.java.util;
  * @author kate
  */
 public class Formatter {
+
+    public Formatter format(String fmt, Object[] args) {
+        return this;
+    }
+
+    public void flush() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

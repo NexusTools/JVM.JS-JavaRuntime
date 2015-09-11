@@ -73,7 +73,7 @@ import net.nexustools.jvm.runtime.java.nio.charset.CharsetEncoder;
  * @since       JDK1.1
  */
 
-public class OutputStreamWriter extends Writer {
+public class OutputStreamWriter extends java.io.Writer {
 
     /**
      * Creates an OutputStreamWriter that uses the named charset.
@@ -177,7 +177,7 @@ public class OutputStreamWriter extends Writer {
      *
      * @exception  IOException  If an I/O error occurs
      */
-    public void write(int c) throws IOException {}
+    public void write(int c) throws java.io.IOException {}
 
     /**
      * Writes a portion of an array of characters.
@@ -188,7 +188,7 @@ public class OutputStreamWriter extends Writer {
      *
      * @exception  IOException  If an I/O error occurs
      */
-    public void write(char cbuf[], int off, int len) throws IOException {}
+    public void write(char cbuf[], int off, int len) throws java.io.IOException {}
 
     /**
      * Writes a portion of a string.
@@ -199,14 +199,14 @@ public class OutputStreamWriter extends Writer {
      *
      * @exception  IOException  If an I/O error occurs
      */
-    public void write(String str, int off, int len) throws IOException {}
+    public void write(String str, int off, int len) throws java.io.IOException {}
 
     /**
      * Flushes the stream.
      *
      * @exception  IOException  If an I/O error occurs
      */
-    public void flush() throws IOException {}
+    public void flush() throws java.io.IOException {}
 
-    public void close() throws IOException {}
+    public void close() throws java.io.IOException {}
 }

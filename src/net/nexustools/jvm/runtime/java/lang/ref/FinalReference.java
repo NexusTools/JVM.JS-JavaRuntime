@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2003, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2003, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -23,27 +23,15 @@
  * questions.
  */
 
-package net.nexustools.jvm.runtime.java.io;
+package net.nexustools.jvm.runtime.java.lang.ref;
 
-import net.nexustools.jvm.runtime.java.io.IOException;
 
-/**
- * A <tt>Closeable</tt> is a source or destination of data that can be closed.
- * The close method is invoked to release resources that the object is
- * holding (such as open files).
- *
- * @since 1.5
- */
+/* Final references, used to implement finalization */
 
-public interface Closeable {
+class FinalReference<T> extends Reference<T> {
 
-    /**
-     * Closes this stream and releases any system resources associated
-     * with it. If the stream is already closed then invoking this
-     * method has no effect.
-     *
-     * @throws IOException if an I/O error occurs
-     */
-    public void close() throws java.io.IOException;
+    public FinalReference(T referent, ReferenceQueue<? super T> q) {
+        super(referent, q);
+    }
 
 }

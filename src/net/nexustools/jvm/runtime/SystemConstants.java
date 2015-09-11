@@ -22,9 +22,8 @@ package net.nexustools.jvm.runtime;
  * @author kate
  */
 public class SystemConstants {
-    public static class Line {
-        public static final String separator = "\n";
+    public static class LINE {
+        public static final String SEPARATOR = "\n";
     }
-    public static final Line line = new Line();
     
 }

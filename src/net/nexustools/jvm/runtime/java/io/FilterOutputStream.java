@@ -42,11 +42,11 @@ package net.nexustools.jvm.runtime.java.io;
  * @since   JDK1.0
  */
 public
-class FilterOutputStream extends OutputStream {
+class FilterOutputStream extends java.io.OutputStream {
     /**
      * The underlying output stream to be filtered.
      */
-    protected OutputStream out;
+    protected java.io.OutputStream out;
 
     /**
      * Creates an output stream filter built on top of the specified
@@ -57,7 +57,7 @@ class FilterOutputStream extends OutputStream {
      *                <code>null</code> if this instance is to be
      *                created without an underlying stream.
      */
-    public FilterOutputStream(OutputStream out) {
+    public FilterOutputStream(java.io.OutputStream out) {
         this.out = out;
     }
 
@@ -73,7 +73,7 @@ class FilterOutputStream extends OutputStream {
      * @param      b   the <code>byte</code>.
      * @exception  IOException  if an I/O error occurs.
      */
-    public void write(int b) throws IOException {
+    public void write(int b) throws java.io.IOException {
         out.write(b);
     }
 
@@ -93,7 +93,7 @@ class FilterOutputStream extends OutputStream {
      * @exception  IOException  if an I/O error occurs.
      * @see        net.nexustools.jvm.runtime.java.io.FilterOutputStream#write(byte[], int, int)
      */
-    public void write(byte b[]) throws IOException {
+    public void write(byte b[]) throws java.io.IOException {
         write(b, 0, b.length);
     }
 
@@ -117,7 +117,7 @@ class FilterOutputStream extends OutputStream {
      * @exception  IOException  if an I/O error occurs.
      * @see        net.nexustools.jvm.runtime.java.io.FilterOutputStream#write(int)
      */
-    public void write(byte b[], int off, int len) throws IOException {
+    public void write(byte b[], int off, int len) throws java.io.IOException {
         if ((off | len | (b.length - (len + off)) | (off + len)) < 0)
             throw new IndexOutOfBoundsException();
 
@@ -136,7 +136,7 @@ class FilterOutputStream extends OutputStream {
      * @exception  IOException  if an I/O error occurs.
      * @see        net.nexustools.jvm.runtime.java.io.FilterOutputStream#out
      */
-    public void flush() throws IOException {
+    public void flush() throws java.io.IOException {
         out.flush();
     }
 
@@ -152,10 +152,10 @@ class FilterOutputStream extends OutputStream {
      * @see        net.nexustools.jvm.runtime.java.io.FilterOutputStream#flush()
      * @see        net.nexustools.jvm.runtime.java.io.FilterOutputStream#out
      */
-    public void close() throws IOException {
+    public void close() throws java.io.IOException {
         try {
           flush();
-        } catch (IOException ignored) {
+        } catch (java.io.IOException ignored) {
         }
         out.close();
     }
