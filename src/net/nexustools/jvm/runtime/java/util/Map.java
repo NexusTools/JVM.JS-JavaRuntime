@@ -273,7 +273,7 @@ public interface Map<K,V> {
      * @throws IllegalArgumentException if some property of a key or value in
      *         the specified map prevents it from being stored in this map
      */
-    void putAll(Map<? extends K, ? extends V> m);
+    void putAll(java.util.Map<? extends K, ? extends V> m);
 
     /**
      * Removes all of the mappings from this map (optional operation).

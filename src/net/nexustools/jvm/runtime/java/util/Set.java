@@ -123,7 +123,7 @@ public interface Set<E> extends Collection<E> {
      *
      * @return an iterator over the elements in this set
      */
-    java.util.Iterator<E> iterator();
+    Iterator<E> iterator();
 
     /**
      * Returns an array containing all of the elements in this set.
@@ -263,7 +263,7 @@ public interface Set<E> extends Collection<E> {
      *         elements (optional), or if the specified collection is null
      * @see    #contains(Object)
      */
-    boolean containsAll(Collection<?> c);
+    boolean containsAll(java.util.Collection<?> c);
 
     /**
      * Adds all of the elements in the specified collection to this set if
@@ -287,7 +287,7 @@ public interface Set<E> extends Collection<E> {
      *         specified collection prevents it from being added to this set
      * @see #add(Object)
      */
-    boolean addAll(Collection<? extends E> c);
+    boolean addAll(java.util.Collection<? extends E> c);
 
     /**
      * Retains only the elements in this set that are contained in the

@@ -33,7 +33,9 @@ public class JSObjectRef {
         public final native JSObjectRef getRef();
     }
     
-    public JSObjectRef() {}
+    public JSObjectRef() {
+        setNewObject();
+    }
     public JSObjectRef(Runnable value) {
         set(value);
     }

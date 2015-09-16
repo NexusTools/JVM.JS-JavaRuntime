@@ -143,7 +143,7 @@ public interface List<E> extends Collection<E> {
      *
      * @return an iterator over the elements in this list in proper sequence
      */
-    java.util.Iterator<E> iterator();
+    Iterator<E> iterator();
 
     /**
      * Returns an array containing all of the elements in this list in proper
@@ -269,7 +269,7 @@ public interface List<E> extends Collection<E> {
      *         elements (optional), or if the specified collection is null
      * @see #contains(Object)
      */
-    boolean containsAll(Collection<?> c);
+    boolean containsAll(java.util.Collection<?> c);
 
     /**
      * Appends all of the elements in the specified collection to the end of
@@ -292,7 +292,7 @@ public interface List<E> extends Collection<E> {
      *         specified collection prevents it from being added to this list
      * @see #add(Object)
      */
-    boolean addAll(Collection<? extends E> c);
+    boolean addAll(java.util.Collection<? extends E> c);
 
     /**
      * Inserts all of the elements in the specified collection into this
@@ -321,7 +321,7 @@ public interface List<E> extends Collection<E> {
      * @throws IndexOutOfBoundsException if the index is out of range
      *         (<tt>index &lt; 0 || index &gt; size()</tt>)
      */
-    boolean addAll(int index, Collection<? extends E> c);
+    boolean addAll(int index, java.util.Collection<? extends E> c);
 
     /**
      * Removes from this list all of its elements that are contained in the

@@ -121,7 +121,7 @@ package net.nexustools.jvm.runtime.java.util;
  * @since 1.2
  */
 
-public interface Collection<E> extends Iterable<E> {
+public interface Collection<E> extends net.nexustools.jvm.runtime.java.lang.Iterable<E> {
     // Query Operations
 
     /**
@@ -164,7 +164,7 @@ public interface Collection<E> extends Iterable<E> {
      *
      * @return an <tt>Iterator</tt> over the elements in this collection
      */
-    java.util.Iterator<E> iterator();
+    Iterator<E> iterator();
 
     /**
      * Returns an array containing all of the elements in this collection.
@@ -303,7 +303,7 @@ public interface Collection<E> extends Iterable<E> {
      *         elements (optional), or if the specified collection is null
      * @see    #contains(Object)
      */
-    boolean containsAll(Collection<?> c);
+    boolean containsAll(java.util.Collection<?> c);
 
     /**
      * Adds all of the elements in the specified collection to this collection
@@ -329,7 +329,7 @@ public interface Collection<E> extends Iterable<E> {
      *         this time due to insertion restrictions
      * @see #add(Object)
      */
-    boolean addAll(Collection<? extends E> c);
+    boolean addAll(java.util.Collection<? extends E> c);
 
     /**
      * Removes all of this collection's elements that are also contained in the
